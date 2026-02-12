@@ -1,16 +1,14 @@
-# drive_worth
+#  DriveWorth - Frontend Framework (Base)
 
-A new Flutter project.
+這是 **HawkGuard-App** 專案的獨立前端框架部分。
 
-## Getting Started
+### 說明
 
-This project is a starting point for a Flutter application.
+* **性質**：純前端 Flutter 框架。
+* **目的**：作為基礎架構，方便後續模組化拆分或重複使用於其他專案。
+* **狀態**：初始化框架結構，暫未與後端 API 連結。
 
-A few resources to get you started if this is your first Flutter project:
+### 使用方式
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. `flutter pub get`
+2. 根據需求拆解 `lib/` 內的功能組件。

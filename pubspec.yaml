@@ -1,8 +1,9 @@
 name: drive_worth
 description: "A new Flutter project."
+
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -33,7 +34,20 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
+  http: ^1.2.0 # HTTP 請求
+  uuid: ^4.5.2 # 產生唯一識別碼
+  rive: ^0.13.15 # Rive 動畫 (.riv)
+  lottie: ^3.1.2 # Lottie 動畫 (.json)
+  rename: ^3.0.2 # 改 APP 名字
+  image_picker: ^1.1.2 # 圖片選擇器
+  google_fonts: ^6.3.3 # Google 字體
+  liquid_swipe: ^3.1.0 # 液體滑動動畫
+  audioplayers: ^6.0.0 # 音效播放
+  flutter_dotenv: ^5.1.0 # 環境變數管理
+  cupertino_icons: ^1.0.8 # iOS 風格圖標
+  flutter_riverpod: ^2.5.0 # 狀態管理
+  supabase_flutter: ^2.0.0 # Supabase Flutter 客戶端
+
 
 dev_dependencies:
   flutter_test:
@@ -45,18 +59,31 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.7 # 啟動畫面
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - assets/images/
+    - assets/images/emojis/
+    - assets/sounds/Fart/
+    - assets/sounds/UI/
+    - assets/animations/
+    - .env
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

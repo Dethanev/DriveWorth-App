@@ -4,12 +4,15 @@
 *.pyc
 *.swp
 .DS_Store
+.env
 .atom/
 .build/
 .buildlog/
 .history
 .svn/
 .swiftpm/
+.idea/
+.vscode/
 migrate_working_dir/
 
 # IntelliJ related
@@ -43,3 +46,36 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ----------------------------------------------------------------------------
+# Android
+# ----------------------------------------------------------------------------
+.gradle/
+local.properties
+*.apk
+*.ap_
+*.aab
+*.dex
+# 密鑰與憑證
+*.keystore
+*.jks
+!debug.keystore
+
+# ----------------------------------------------------------------------------
+# iOS / macOS
+# ----------------------------------------------------------------------------
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+# CocoaPods
+Pods/
+ServiceDefinitions.json
+Podfile.lock
