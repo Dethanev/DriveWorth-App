@@ -1,0 +1,6 @@
+# 告訴 GitHub 忽略這些平台的原生代碼統計
+windows/* linguist-vendored
+linux/* linguist-vendored
+macos/* linguist-vendored
+android/* linguist-vendored
+ios/* linguist-vendored
