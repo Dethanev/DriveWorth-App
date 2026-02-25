@@ -43,7 +43,7 @@ class PostCard extends StatelessWidget {
 
             Text(
               post.title,
-              style: AppTextStyles.bodyBold.copyWith(fontSize: 17),
+              style: AppTextStyles.h4,
             ),
             const SizedBox(height: 6),
 
@@ -51,9 +51,8 @@ class PostCard extends StatelessWidget {
               post.snippet,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.body.copyWith(
+              style: AppTextStyles.bodySmall.copyWith(
                 color: AppColors.textSecondary,
-                fontSize: 14,
                 height: 1.4,
               ),
             ),

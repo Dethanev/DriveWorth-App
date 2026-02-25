@@ -12,7 +12,7 @@ class SettingsSectionHeader extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12, bottom: 8),
       child: Text(
         title,
-        style: AppTextStyles.h2.copyWith(fontSize: 18),
+        style: AppTextStyles.h4,
       ),
     );
   }

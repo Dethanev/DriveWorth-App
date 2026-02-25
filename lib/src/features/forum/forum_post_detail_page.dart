@@ -111,7 +111,7 @@ class _ForumPostDetailPageState extends State<ForumPostDetailPage> {
                   const SizedBox(height: 12),
                   Text(
                     widget.post.title,
-                    style: AppTextStyles.h2.copyWith(fontSize: 20),
+                    style: AppTextStyles.h3,
                   ),
                   const SizedBox(height: 8),
                   TimeAgo(date: widget.post.createdAt),
@@ -121,7 +121,6 @@ class _ForumPostDetailPageState extends State<ForumPostDetailPage> {
                     widget.post.content,
                     style: AppTextStyles.body.copyWith(
                       height: 1.6,
-                      fontSize: 16,
                     ),
                   ),
                   const SizedBox(height: 32),

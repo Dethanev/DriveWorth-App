@@ -40,8 +40,16 @@ class AppColors {
   static const Color forumLike = Color(0xFFE91E63); // 論壇按讚顏色
 
   // Analyze
-  static const Color analyzeHistoryBackground = Color(0xFFF2F2F0); // 分析歷史記錄背景色
-  static const Color analyzeInputBackground = Color(0xFFF2F2F0); // 分析輸入框背景色
+  static const Color analyzeHistoryBackground = Color(0xFFF2F2F0);
+  static const Color analyzeInputBackground = Color(0xFFF2F2F0);
+
+  // Neubrutalism (TCO Analyze)
+  static const Color neuBackground = Color(0xFFFFFFFF);
+  static const Color neuCardTax = Color(0xFF3BB273);
+  static const Color neuCardInsurance = Color(0xFF00C1FF);
+  static const Color neuCardFuel = Color(0xFFFF5C00);
+  static const Color neuCardMaintenance = Color(0xFFFFD100);
+  static const Color neuCardTotal = Color(0xFF1D1D1F);
 
   // AppBar
   static const Color appbar = Color.fromARGB(255, 255, 208, 90);

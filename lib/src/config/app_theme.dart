@@ -3,6 +3,7 @@ import 'app_colors.dart';
 import 'app_text_styles.dart';
 
 class AppTheme {
+  static const String fontFamily = 'Poppins';
   static ThemeData light() {
     return ThemeData(
       useMaterial3: true,
@@ -51,7 +52,7 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.secondary,
-          textStyle: AppTextStyles.button.copyWith(fontSize: 16),
+          textStyle: AppTextStyles.buttonSm,
         ),
       ),
 

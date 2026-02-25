@@ -71,12 +71,12 @@ class _InfoTooltipState extends State<InfoTooltip> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('關於鷹眼', style: AppTextStyles.h2.copyWith(fontSize: 18)),
-                const SizedBox(height: 8),
-                Text(
-                  '協助辨識電話、網址、文字與圖片的詐騙風險，守護你的日常安全。',
-                  style: AppTextStyles.body.copyWith(fontSize: 14),
-                ),
+              Text('關於鷹眼', style: AppTextStyles.h4),
+              const SizedBox(height: 8),
+              Text(
+                '協助辨識電話、網址、文字與圖片的詐騙風險，守護你的日常安全。',
+                style: AppTextStyles.bodySmall,
+              ),
                 const SizedBox(height: 12),
                 Align(
                   alignment: Alignment.centerRight,

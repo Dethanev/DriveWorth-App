@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../config/app_colors.dart';
 
 class AppBottomNav extends StatelessWidget {
   final int currentIndex;
@@ -17,32 +16,28 @@ class AppBottomNav extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: onTap,
       type: BottomNavigationBarType.shifting,
-      selectedItemColor: currentIndex == 0 ? AppColors.white : AppColors.black,
-      unselectedItemColor: AppColors.textSecondary,
-      
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.grey,
+      showUnselectedLabels: true,
+      selectedLabelStyle: const TextStyle(
+      fontWeight: FontWeight.bold,
+      ),
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_rounded),
           label: '首頁',
-          backgroundColor: AppColors.appbar,
         ),
-
         BottomNavigationBarItem(
-          icon: Icon(Icons.shield_rounded),
+          icon: Icon(Icons.analytics_rounded),
           label: '分析',
-          backgroundColor: AppColors.background,
         ),
-
         BottomNavigationBarItem(
-          icon: Icon(Icons.forum_rounded),
-          label: '論壇',
-          backgroundColor: AppColors.background,
+          icon: Icon(Icons.chat_rounded),
+          label: '知識',
         ),
-
         BottomNavigationBarItem(
           icon: Icon(Icons.settings_rounded),
           label: '設定',
-          backgroundColor: AppColors.background,
         ),
       ],
     );

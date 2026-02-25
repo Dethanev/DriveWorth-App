@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:drive_worth/src/shared/utils/sound.dart';
+import '../config/app_colors.dart';
 import '../features/personal/personal_page.dart';
 import '../features/story/story_page.dart';
 import 'app_bottom_nav.dart';
@@ -35,6 +36,7 @@ class _RootShellState extends State<RootShell> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.neuBackground,
       body: IndexedStack(
         index: _currentIndex,
         children: _pages,
