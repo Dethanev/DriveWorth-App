@@ -143,7 +143,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     }
   }
 
-  pageChangeCallback(int lpage) {
+  void pageChangeCallback(int lpage) {
     setState(() {
       currentPage = lpage;
     });
