@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rive/rive.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:drive_worth/src/layout/app_shell.dart';
 import 'package:drive_worth/src/config/app_colors.dart';
 import 'package:drive_worth/src/data/supabase/auth_service.dart';
@@ -136,9 +137,19 @@ class _LoginPageState extends State<LoginPage> {
           MaterialPageRoute(builder: (context) => const RootShell()),
         );
       });
-    } catch (e) {
+    } on AuthException catch (e) {
       failTrigger?.fire();
-      _showError('登入失敗：${e.toString()}');
+      if (!mounted) return;
+      _showError(
+        e.code == 'invalid_credentials'
+            ? '帳號或密碼錯誤，請再試一次。'
+            : e.message,
+      );
+    } catch (e, st) {
+      failTrigger?.fire();
+      if (!mounted) return;
+      debugPrint('Login error: $e\n$st');
+      _showError('登入失敗，請稍後再試。');
     }
   }
 

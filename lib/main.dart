@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'src/features/auth/auth_gate.dart';
 import 'src/features/auth/login_page.dart';
 import 'src/config/app_theme.dart';
 import 'src/features/onboarding/onboarding_page.dart';
@@ -39,8 +40,9 @@ class DriveWorthApp extends StatelessWidget {
       title: 'Hawk Guardian',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
-      initialRoute: '/onboarding',
+      initialRoute: '/',
       routes: {
+        '/': (context) => const AuthGate(),
         '/onboarding': (context) => const OnboardingPage(),
         '/login': (context) => const LoginPage(),
         '/root': (context) => const RootShell(),
