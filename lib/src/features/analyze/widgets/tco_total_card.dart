@@ -37,6 +37,7 @@ class TcoTotalCard extends StatelessWidget {
           _row('保險', result.annualInsurance),
           _row('燃油', result.annualFuel),
           _row('保養', result.annualMaintenance),
+          _row('風險預備金（輪胎）', result.annualRiskReserve),
         ],
       ),
     );

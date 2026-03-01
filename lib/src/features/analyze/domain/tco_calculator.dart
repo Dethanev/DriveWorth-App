@@ -58,18 +58,21 @@ class TcoCalculator {
     return (total / _yearsForTotal * 100).round() / 100;
   }
 
+  static const double annualRiskReserve = 3000;
+
   static TcoResult compute(TcoInputs inputs) {
     final tax = annualTaxFromEngineCc(inputs.engineCc);
     final insurance = annualInsurance(inputs);
     final fuel = annualFuel(inputs);
     final maintenance = annualMaintenanceAverage(inputs);
-    final annualTotal = tax + insurance + fuel + maintenance;
+    final annualTotal = tax + insurance + fuel + maintenance + annualRiskReserve;
     final total3Year = (annualTotal * _yearsForTotal * 100).round() / 100;
     return TcoResult(
       annualTax: tax,
       annualInsurance: insurance,
       annualFuel: fuel,
       annualMaintenance: maintenance,
+      annualRiskReserve: annualRiskReserve,
       total3Year: total3Year,
     );
   }

@@ -50,6 +50,7 @@ class AppColors {
   static const Color neuCardFuel = Color(0xFFFF5C00);
   static const Color neuCardMaintenance = Color(0xFFFFD100);
   static const Color neuCardTotal = Color(0xFF1D1D1F);
+  static const Color neuCardRiskReserve = Color(0xFF9E9E9E);
 
   // AppBar
   static const Color appbar = Color.fromARGB(255, 255, 208, 90);

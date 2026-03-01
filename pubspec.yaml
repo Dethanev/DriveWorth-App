@@ -47,6 +47,8 @@ dependencies:
   cupertino_icons: ^1.0.8 # iOS 風格圖標
   flutter_riverpod: ^2.5.0 # 狀態管理
   supabase_flutter: ^2.0.0 # Supabase Flutter 客戶端
+  getwidget: ^7.0.0 # GetWidget
+  fl_chart: ^0.69.0
 
 
 dev_dependencies:

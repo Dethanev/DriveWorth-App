@@ -54,6 +54,7 @@ class TcoResult {
   final double annualInsurance;
   final double annualFuel;
   final double annualMaintenance;
+  final double annualRiskReserve;
   final double total3Year;
 
   const TcoResult({
@@ -61,6 +62,7 @@ class TcoResult {
     required this.annualInsurance,
     required this.annualFuel,
     required this.annualMaintenance,
+    required this.annualRiskReserve,
     required this.total3Year,
   });
 }
