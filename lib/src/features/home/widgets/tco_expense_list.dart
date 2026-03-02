@@ -75,7 +75,11 @@ class TcoExpenseList extends StatelessWidget {
                       border: Border.all(color: AppColors.black, width: 1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Icon(Icons.receipt_long, color: _colors[i], size: 22),
+                    child: Icon(
+                      Icons.receipt_long,
+                      color: _colors[i],
+                      size: 22,
+                    ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(

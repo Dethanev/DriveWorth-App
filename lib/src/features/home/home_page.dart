@@ -24,7 +24,7 @@ class HomePage extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -39,7 +39,7 @@ class HomePage extends ConsumerWidget {
                   Expanded(
                     child: Text(
                       'TCO總擁有成本分析',
-                      style: AppTextStyles.h1,
+                      style: AppTextStyles.h2,
                       textAlign: TextAlign.center,
                     ),
                   ),

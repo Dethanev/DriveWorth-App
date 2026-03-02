@@ -10,7 +10,7 @@ import 'app_colors.dart';
 class AppTextStyles {
   /// H1：頁面主標（例如：畫面頂部大標題）
   static TextStyle h1 = GoogleFonts.poppins(
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: FontWeight.w700,
     height: 1.1,
     letterSpacing: -0.4,
