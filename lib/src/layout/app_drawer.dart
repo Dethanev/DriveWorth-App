@@ -36,7 +36,7 @@ class MyDrawer extends StatelessWidget {
                     // 背景裝飾
                     image: DecorationImage(
                       fit: BoxFit.cover, // 圖片填充方式
-                      image: AssetImage("assets/images/car.png"),
+                      image: AssetImage("assets/images/app_icon.png"),
                     ),
                   ),
                 ),

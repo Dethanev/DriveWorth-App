@@ -22,7 +22,7 @@ class Header extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/car.png"),
+          image: AssetImage("assets/images/app_icon.png"),
         ),
       ),
     );
