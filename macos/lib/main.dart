@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'src/features/auth/login_page.dart';
 import 'src/config/app_theme.dart';
 import 'src/features/onboarding/onboarding_page.dart';
@@ -27,7 +28,7 @@ Future<void> main() async {
 
   await SupabaseService.initialize();
 
-  runApp(const HawkGuardianApp());
+  runApp(const ProviderScope(child: HawkGuardianApp()));
 }
 
 class HawkGuardianApp extends StatelessWidget {

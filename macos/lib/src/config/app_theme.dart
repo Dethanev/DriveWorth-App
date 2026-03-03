@@ -77,15 +77,6 @@ class AppTheme {
           borderSide: const BorderSide(color: AppColors.secondary, width: 1.5),
         ),
       ),
-
-      // Bottom Navigation Bar Theme
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: AppColors.surface.withValues(alpha: 0.9),
-        selectedItemColor: AppColors.secondary,
-        unselectedItemColor: AppColors.textSecondary,
-        elevation: 8,
-        type: BottomNavigationBarType.shifting, // Note: Set this in widget too
-      ),
     );
   }
 }

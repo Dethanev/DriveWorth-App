@@ -7,9 +7,9 @@ class TcoInputs {
   final double yearKm;
   final double fuelConsumptionKmPerL;
   final double fuelPricePerL;
-  final double maintenance10k;
-  final double maintenance40k;
-  final double maintenance80k;
+  final double maintenance5k;
+  final double maintenance20k;
+  final double maintenance60k;
 
   const TcoInputs({
     this.engineCc = 1800,
@@ -18,9 +18,9 @@ class TcoInputs {
     this.yearKm = 15000,
     this.fuelConsumptionKmPerL = 12,
     this.fuelPricePerL = 32,
-    this.maintenance10k = 4000,
-    this.maintenance40k = 12000,
-    this.maintenance80k = 18000,
+    this.maintenance5k = 2500,
+    this.maintenance20k = 10000,
+    this.maintenance60k = 22000,
   });
 
   TcoInputs copyWith({
@@ -30,9 +30,9 @@ class TcoInputs {
     double? yearKm,
     double? fuelConsumptionKmPerL,
     double? fuelPricePerL,
-    double? maintenance10k,
-    double? maintenance40k,
-    double? maintenance80k,
+    double? maintenance5k,
+    double? maintenance20k,
+    double? maintenance60k,
   }) {
     return TcoInputs(
       engineCc: engineCc ?? this.engineCc,
@@ -42,9 +42,9 @@ class TcoInputs {
       fuelConsumptionKmPerL:
           fuelConsumptionKmPerL ?? this.fuelConsumptionKmPerL,
       fuelPricePerL: fuelPricePerL ?? this.fuelPricePerL,
-      maintenance10k: maintenance10k ?? this.maintenance10k,
-      maintenance40k: maintenance40k ?? this.maintenance40k,
-      maintenance80k: maintenance80k ?? this.maintenance80k,
+      maintenance5k: maintenance5k ?? this.maintenance5k,
+      maintenance20k: maintenance20k ?? this.maintenance20k,
+      maintenance60k: maintenance60k ?? this.maintenance60k,
     );
   }
 }

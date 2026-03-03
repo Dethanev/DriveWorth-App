@@ -74,7 +74,11 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('設定', style: AppTextStyles.h2),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text('設定中心', style: AppTextStyles.h2),
         backgroundColor: AppColors.background,
         scrolledUnderElevation: 0,
       ),

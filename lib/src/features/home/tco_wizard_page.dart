@@ -126,15 +126,15 @@ class _TcoWizardPageState extends ConsumerState<TcoWizardPage> {
                   ),
                   _TcoCardPage(
                     child: MaintenanceCard(
-                      cost10k: _inputs.maintenance10k,
-                      cost40k: _inputs.maintenance40k,
-                      cost80k: _inputs.maintenance80k,
-                      onCost10kChanged: (v) =>
-                          _updateInputs((i) => i.copyWith(maintenance10k: v)),
-                      onCost40kChanged: (v) =>
-                          _updateInputs((i) => i.copyWith(maintenance40k: v)),
-                      onCost80kChanged: (v) =>
-                          _updateInputs((i) => i.copyWith(maintenance80k: v)),
+                      cost5k: _inputs.maintenance5k,
+                      cost20k: _inputs.maintenance20k,
+                      cost60k: _inputs.maintenance60k,
+                      onCost5kChanged: (v) =>
+                          _updateInputs((i) => i.copyWith(maintenance5k: v)),
+                      onCost20kChanged: (v) =>
+                          _updateInputs((i) => i.copyWith(maintenance20k: v)),
+                      onCost60kChanged: (v) =>
+                          _updateInputs((i) => i.copyWith(maintenance60k: v)),
                     ),
                   ),
                 ],

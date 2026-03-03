@@ -40,21 +40,16 @@ class TcoCalculator {
   }
 
   static double annualMaintenanceAverage(TcoInputs inputs) {
-    const double km10k = 10000, km40k = 40000, km80k = 80000;
-    final totalKm = inputs.yearKm * _yearsForTotal;
-    int n10k = 0, n40k = 0, n80k = 0;
-    for (double k = km10k; k <= totalKm; k += km10k) {
-      n10k++;
-    }
-    for (double k = km40k; k <= totalKm; k += km40k) {
-      n40k++;
-    }
-    for (double k = km80k; k <= totalKm; k += km80k) {
-      n80k++;
-    }
-    final total = n10k * inputs.maintenance10k +
-        n40k * inputs.maintenance40k +
-        n80k * inputs.maintenance80k;
+    const int km5k = 5000, km20k = 20000, km60k = 60000;
+    final totalKm = (inputs.yearKm * _yearsForTotal).round();
+    final n5k = totalKm ~/ km5k;
+    final n20k = totalKm ~/ km20k;
+    final n60k = totalKm ~/ km60k;
+    final nSmallOnly = n5k - n20k;
+    final nMediumOnly = n20k - n60k;
+    final total = nSmallOnly * inputs.maintenance5k +
+        nMediumOnly * inputs.maintenance20k +
+        n60k * inputs.maintenance60k;
     return (total / _yearsForTotal * 100).round() / 100;
   }
 

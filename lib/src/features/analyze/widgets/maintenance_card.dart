@@ -5,21 +5,21 @@ import '../../../config/app_colors.dart';
 import '../../../config/app_text_styles.dart';
 
 class MaintenanceCard extends StatelessWidget {
-  final double cost10k;
-  final double cost40k;
-  final double cost80k;
-  final ValueChanged<double> onCost10kChanged;
-  final ValueChanged<double> onCost40kChanged;
-  final ValueChanged<double> onCost80kChanged;
+  final double cost5k;
+  final double cost20k;
+  final double cost60k;
+  final ValueChanged<double> onCost5kChanged;
+  final ValueChanged<double> onCost20kChanged;
+  final ValueChanged<double> onCost60kChanged;
 
   const MaintenanceCard({
     super.key,
-    required this.cost10k,
-    required this.cost40k,
-    required this.cost80k,
-    required this.onCost10kChanged,
-    required this.onCost40kChanged,
-    required this.onCost80kChanged,
+    required this.cost5k,
+    required this.cost20k,
+    required this.cost60k,
+    required this.onCost5kChanged,
+    required this.onCost20kChanged,
+    required this.onCost60kChanged,
   });
 
   @override
@@ -30,21 +30,13 @@ class MaintenanceCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            '保養',
-            style: AppTextStyles.h2.copyWith(color: AppColors.black),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            '里程節點預算（1 萬 / 4 萬 / 8 萬 km）',
-            style: AppTextStyles.bodySmall.copyWith(color: AppColors.black),
-          ),
+          Text('保養', style: AppTextStyles.h2.copyWith(color: AppColors.black)),
           const SizedBox(height: 12),
-          _BudgetRow(label: '1 萬 km', value: cost10k, onChanged: onCost10kChanged),
+          _BudgetRow(label: '5 千 km\n(小保)', value: cost5k, onChanged: onCost5kChanged),
           const SizedBox(height: 8),
-          _BudgetRow(label: '4 萬 km', value: cost40k, onChanged: onCost40kChanged),
+          _BudgetRow(label: '2 萬 km\n(中保)', value: cost20k, onChanged: onCost20kChanged),
           const SizedBox(height: 8),
-          _BudgetRow(label: '8 萬 km', value: cost80k, onChanged: onCost80kChanged),
+          _BudgetRow(label: '6 萬 km\n(大保)', value: cost60k, onChanged: onCost60kChanged),
         ],
       ),
     );

@@ -43,6 +43,9 @@ class AppColors {
   static const Color analyzeHistoryBackground = Color(0xFFF2F2F0); // 分析歷史記錄背景色
   static const Color analyzeInputBackground = Color(0xFFF2F2F0); // 分析輸入框背景色
 
+  // Neubrutalism (TCO)
+  static const Color neuBackground = Color(0xFFFFFFFF);
+
   // AppBar
   static const Color appbar = Color.fromARGB(255, 255, 208, 90);
 
