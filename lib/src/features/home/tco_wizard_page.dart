@@ -248,7 +248,7 @@ class _BrandModelPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(1, 24, 1, 24),
+        padding: const EdgeInsets.fromLTRB(24, 24, 24, 24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -311,7 +311,7 @@ class _TcoCardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(1, 16, 1, 16),
+        padding: const EdgeInsets.fromLTRB(24, 16, 24, 16),
         child: child,
       ),
     );
