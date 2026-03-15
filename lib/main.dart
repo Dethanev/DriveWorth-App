@@ -30,7 +30,7 @@ class DriveWorthApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hawk Guardian',
+      title: 'Drive Worth',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       initialRoute: '/',
