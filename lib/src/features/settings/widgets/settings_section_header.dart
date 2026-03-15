@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../config/app_colors.dart';
 import '../../../config/app_text_styles.dart';
 
 class SettingsSectionHeader extends StatelessWidget {
@@ -12,7 +13,7 @@ class SettingsSectionHeader extends StatelessWidget {
       padding: const EdgeInsets.only(left: 12, bottom: 8),
       child: Text(
         title,
-        style: AppTextStyles.h4,
+        style: AppTextStyles.h4.copyWith(color: AppColors.textPrimary),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../config/app_text_styles.dart';
 import '../../../config/app_colors.dart';
+import '../../../config/app_text_styles.dart';
+import '../../../shared/utils/sound.dart';
 
 class SettingsListTile extends StatelessWidget {
   final String title;
@@ -16,16 +17,44 @@ class SettingsListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title, style: AppTextStyles.body),
-      subtitle: subtitle != null
-          ? Text(
-              subtitle!,
-              style: const TextStyle(fontSize: 13, color: AppColors.textSecondary),
-            )
-          : null,
-      trailing: const Icon(Icons.chevron_right, color: AppColors.textSecondary),
-      onTap: onTap,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
+          Sound.click();
+          onTap();
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(title, style: AppTextStyles.body),
+                    if (subtitle != null) ...[
+                      const SizedBox(height: 2),
+                      Text(
+                        subtitle!,
+                        style: AppTextStyles.bodySmall.copyWith(
+                          color: AppColors.textSecondary,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.chevron_right,
+                color: AppColors.textSecondary,
+                size: 24,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
