@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_text_styles.dart';
 import '../../shared/models/forum_post.dart';
+import '../../shared/utils/sound.dart';
 import 'widgets/time_ago.dart';
 
 class ForumPostDetailPage extends StatefulWidget {
@@ -15,6 +16,7 @@ class ForumPostDetailPage extends StatefulWidget {
 
 class _ForumPostDetailPageState extends State<ForumPostDetailPage> {
   void _toggleLike() {
+    Sound.click();
     setState(() {
       widget.post.isLiked = !widget.post.isLiked;
       if (widget.post.isLiked) {
@@ -28,10 +30,18 @@ class _ForumPostDetailPageState extends State<ForumPostDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Sound.click();
+            Navigator.pop(context);
+          },
+        ),
         title: Text('文章詳情', style: AppTextStyles.h2),
-        backgroundColor: AppColors.background,
+        backgroundColor: AppColors.white,
+        scrolledUnderElevation: 0,
         iconTheme: const IconThemeData(color: AppColors.textPrimary),
       ),
       body: SingleChildScrollView(
@@ -47,6 +57,14 @@ class _ForumPostDetailPageState extends State<ForumPostDetailPage> {
               decoration: BoxDecoration(
                 color: AppColors.accent.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(4),
+                border: Border.all(color: AppColors.black, width: 2),
+                boxShadow: const [
+                  BoxShadow(
+                    color: AppColors.black,
+                    offset: Offset(3, 3),
+                    blurRadius: 0,
+                  ),
+                ],
               ),
               child: Text(
                 widget.post.tag,
@@ -104,11 +122,19 @@ class _LikeButton extends StatelessWidget {
           color:
               isLiked
                   ? AppColors.forumLike.withValues(alpha: 0.1)
-                  : AppColors.transparent,
+                  : AppColors.white,
           border: Border.all(
-            color: isLiked ? AppColors.forumLike : AppColors.textSecondary,
+            color: AppColors.black,
+            width: 2,
           ),
           borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
+              color: AppColors.black,
+              offset: Offset(3, 3),
+              blurRadius: 0,
+            ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

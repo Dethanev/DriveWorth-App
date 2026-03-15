@@ -18,13 +18,14 @@ class PostCard extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(16),
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(color: AppColors.black, width: 3),
           boxShadow: [
             BoxShadow(
-              color: AppColors.black.withValues(alpha: 0.04),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
+              color: AppColors.black,
+              offset: const Offset(4, 4),
+              blurRadius: 0,
             ),
           ],
         ),
@@ -33,10 +34,9 @@ class PostCard extends StatelessWidget {
           children: [
             Text(
               post.tag,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
+              style: AppTextStyles.caption.copyWith(
                 color: AppColors.accent,
+                fontWeight: FontWeight.w600,
               ),
             ),
             const SizedBox(height: 8),
