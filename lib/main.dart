@@ -12,15 +12,7 @@ import 'src/data/supabase/supabase_client.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Load .env file from file system (development only, not bundled in app)
-  // In production builds, use --dart-define or environment variables instead
-  // Example: flutter run --dart-define=SUPABASE_URL=... --dart-define=SUPABASE_ANON_KEY=...
-  try {
-    await dotenv.load(fileName: '.env');
-  } catch (e) {
-    // .env file not found - will use environment variables or dart-define
-    // This is expected in production builds
-  }
+  await dotenv.load(fileName: '.env');
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

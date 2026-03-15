@@ -81,7 +81,7 @@ class TcoChartSection extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('總預算', style: AppTextStyles.caption),
+              Text('三年總預算', style: AppTextStyles.caption),
               const SizedBox(height: 4),
               Text(
                 '${total.toStringAsFixed(0)} 元',
