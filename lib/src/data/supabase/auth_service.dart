@@ -59,4 +59,27 @@ class AuthService {
       rethrow;
     }
   }
+
+  static Future<UserProfile?> getProfile(String userId) async {
+    try {
+      final res = await SupabaseService.client
+          .from('profiles')
+          .select('nickname, avatar_url')
+          .eq('id', userId)
+          .maybeSingle();
+      if (res == null) return null;
+      return UserProfile(
+        nickname: res['nickname'] as String?,
+        avatarUrl: res['avatar_url'] as String?,
+      );
+    } catch (_) {
+      return null;
+    }
+  }
+}
+
+class UserProfile {
+  const UserProfile({this.nickname, this.avatarUrl});
+  final String? nickname;
+  final String? avatarUrl;
 }

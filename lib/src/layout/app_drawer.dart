@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:drive_worth/src/config/app_colors.dart';
+import 'package:drive_worth/src/data/supabase/auth_service.dart';
 import 'package:drive_worth/src/shared/utils/sound.dart';
+import 'package:drive_worth/src/features/auth/providers/auth_state_provider.dart';
 import 'package:drive_worth/src/features/personal/profile_center_page.dart';
 import 'package:drive_worth/src/features/history/history_center_page.dart';
 import 'package:drive_worth/src/features/forum/forum_page.dart';
@@ -10,7 +14,7 @@ import 'package:drive_worth/src/features/forms/form_center_page.dart';
 import 'package:drive_worth/src/features/support/support_center_page.dart';
 import 'package:drive_worth/src/features/settings/settings_page.dart';
 
-class AppDrawer extends StatelessWidget {
+class AppDrawer extends ConsumerWidget {
   const AppDrawer({super.key});
 
   void _push(BuildContext context, Widget page) {
@@ -22,10 +26,26 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
+  static String _displayName(User? user, UserProfile? profile) {
+    if (profile?.nickname != null && profile!.nickname!.isNotEmpty) return profile.nickname!;
+    final email = user?.email;
+    if (email != null && email.isNotEmpty) return email.split('@').first;
+    return '使用者';
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final user = ref.watch(currentUserProvider);
+    final profileAsync = ref.watch(userProfileProvider);
+    final profile = profileAsync.valueOrNull;
+    final displayName = _displayName(user, profile);
+    final email = user?.email ?? '';
+    final ImageProvider avatarImage = (profile?.avatarUrl != null && profile!.avatarUrl!.isNotEmpty)
+        ? NetworkImage(profile.avatarUrl!)
+        : const AssetImage('assets/images/Ethan.png');
+
     return GFDrawer(
-      color:  Colors.white,
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -39,7 +59,8 @@ class AppDrawer extends StatelessWidget {
             ),
             currentAccountPicture: GFAvatar(
               radius: 28,
-              backgroundImage: const AssetImage('assets/images/Ethan.png'),
+              backgroundColor: Colors.transparent,
+              backgroundImage: avatarImage,
               shape: GFAvatarShape.circle,
             ),
             closeButton: const SizedBox.shrink(),
@@ -47,8 +68,8 @@ class AppDrawer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Ethan', style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.white)),
-                Text('ethan@gmail.com', style: GoogleFonts.poppins(fontSize: 14, color: AppColors.white)),
+                Text(displayName, style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w600, color: AppColors.white)),
+                Text(email, style: GoogleFonts.poppins(fontSize: 14, color: AppColors.white)),
               ],
             ),
           ),

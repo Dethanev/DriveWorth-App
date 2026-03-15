@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../config/app_colors.dart';
 import '../../config/app_text_styles.dart';
+import '../../data/supabase/auth_service.dart';
 
 import 'widgets/settings_section_header.dart';
 import 'widgets/settings_card.dart';
@@ -64,9 +65,9 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  void _onLogout() {
-    // TODO: 調用 Supabase 登出 API
-    // await AuthService.signOut();
+  Future<void> _onLogout() async {
+    await AuthService.signOut();
+    if (!mounted) return;
     Navigator.pushReplacementNamed(context, '/login');
   }
 

@@ -82,8 +82,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/emojis/
-    - assets/sounds/Fart/
-    - assets/sounds/UI/
+    - assets/sounds/fart/
+    - assets/sounds/laugh/
+    - assets/sounds/ui/
     - assets/animations/
     - .env
   # To add assets to your application, add an assets section, like this:

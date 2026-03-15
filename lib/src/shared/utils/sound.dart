@@ -31,18 +31,22 @@ class Sound {
     } catch (_) {}
   }
 
-  static Future<void> click() => _play('sounds/UI/ui_click.mp3');
+  static Future<void> click() => _play('sounds/ui/ui_click.mp3');
 
-  static Future<void> clickAlt1() => _play('sounds/UI/ui_click_alt_1.mp3');
-  static Future<void> clickAlt2() => _play('sounds/UI/ui_click_alt_2.mp3');
-  static Future<void> clickAlt3() => _play('sounds/UI/ui_click_alt_3.mp3');
-  static Future<void> clickAlt4() => _play('sounds/UI/ui_click_alt_4.mp3');
+  static Future<void> clickAlt1() => _play('sounds/ui/ui_click_alt_1.mp3');
+  static Future<void> clickAlt2() => _play('sounds/ui/ui_click_alt_2.mp3');
+  static Future<void> clickAlt3() => _play('sounds/ui/ui_click_alt_3.mp3');
+  static Future<void> clickAlt4() => _play('sounds/ui/ui_click_alt_4.mp3');
 
-  static Future<void> fart1() => _play('sounds/Fart/fart1.wav');
-  static Future<void> fart2() => _play('sounds/Fart/fart2.wav');
-  static Future<void> fart3() => _play('sounds/Fart/fart3.wav');
-  static Future<void> fart4() => _play('sounds/Fart/fart4.wav');
-  static Future<void> fart5() => _play('sounds/Fart/fart5.wav');
+  static Future<void> fart1() => _play('sounds/fart/fart1.wav');
+  static Future<void> fart2() => _play('sounds/fart/fart2.wav');
+  static Future<void> fart3() => _play('sounds/fart/fart3.wav');
+  static Future<void> fart4() => _play('sounds/fart/fart4.wav');
+  static Future<void> fart5() => _play('sounds/fart/fart5.wav');
+
+  static Future<void> laugh() => _play(
+    'sounds/laugh/laugh.mp3',
+  );
 
   static Future<void> tactileClick() async {
     HapticFeedback.selectionClick();
