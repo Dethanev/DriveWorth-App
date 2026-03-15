@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../config/app_colors.dart';
+import '../../shared/utils/sound.dart';
 import '../../config/app_text_styles.dart';
 import 'providers/tco_result_provider.dart';
 import 'widgets/tco_chart_section.dart';
@@ -30,7 +31,10 @@ class HomePage extends ConsumerWidget {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.menu),
-                    onPressed: () => Scaffold.of(context).openDrawer(),
+                    onPressed: () {
+                    Sound.click();
+                    Scaffold.of(context).openDrawer();
+                  },
                     style: IconButton.styleFrom(
                       foregroundColor: AppColors.black,
                       minimumSize: const Size(48, 48),
@@ -45,7 +49,10 @@ class HomePage extends ConsumerWidget {
                   ),
                   IconButton(
                     icon: const Icon(Icons.history),
-                    onPressed: () => showTcoHistorySheet(context),
+                    onPressed: () {
+                    Sound.click();
+                    showTcoHistorySheet(context);
+                  },
                     style: IconButton.styleFrom(
                       foregroundColor: AppColors.black,
                       minimumSize: const Size(48, 48),

@@ -35,7 +35,7 @@ class PersonalPage extends StatelessWidget {
                   icon: item['icon'],
                   title: item['title'],
                   onTap: () {
-                    Sound.click1();
+                    Sound.click();
                     // TODO: 實作導航邏輯
                   },
                 );

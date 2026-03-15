@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../config/app_colors.dart';
+import '../../../shared/utils/sound.dart';
 import '../../../config/app_config.dart';
 import '../../../config/app_text_styles.dart';
 import '../tco_wizard_page.dart';
@@ -15,6 +16,7 @@ class TcoAnalysisButton extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
+            Sound.click();
             Navigator.of(context).push(
               MaterialPageRoute<void>(
                 builder: (context) => const TcoWizardPage(),

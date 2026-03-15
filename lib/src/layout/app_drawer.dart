@@ -14,7 +14,7 @@ class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
 
   void _push(BuildContext context, Widget page) {
-    Sound.click5();
+    Sound.click();
     Navigator.pop(context);
     Navigator.push(
       context,
@@ -25,7 +25,7 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GFDrawer(
-      color: AppColors.background,
+      color:  Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -94,7 +94,7 @@ class AppDrawer extends StatelessWidget {
               width: double.infinity,
               child: OutlinedButton.icon(
                 onPressed: () {
-                  Sound.click5();
+                  Sound.click();
                   Navigator.pop(context);
                 },
                 icon: const Icon(Icons.close, size: 22),

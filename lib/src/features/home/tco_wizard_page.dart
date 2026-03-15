@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../config/app_colors.dart';
+import '../../shared/utils/sound.dart';
 import '../../config/app_config.dart';
 import '../../config/app_text_styles.dart';
 import '../analyze/domain/tco_calculator.dart';
@@ -46,6 +47,7 @@ class _TcoWizardPageState extends ConsumerState<TcoWizardPage> {
   }
 
   void _onNext() {
+    Sound.click();
     if (_currentPage >= _totalPages - 1) {
       final result = TcoCalculator.compute(_inputs);
       ref.read(tcoResultProvider.notifier).setResult(result);
@@ -65,6 +67,7 @@ class _TcoWizardPageState extends ConsumerState<TcoWizardPage> {
   }
 
   void _onBack() {
+    Sound.click();
     if (_currentPage == 0) {
       Navigator.of(context).pop();
     } else {
