@@ -16,35 +16,14 @@ class ForumPage extends StatefulWidget {
 class _ForumPageState extends State<ForumPage> {
   int _currentSubTab = 0;
 
-  // 取得排序後的貼文列表
   List<ForumPost> get _sortedPosts {
-    // TODO: 從後端獲取貼文列表
     final list = List<ForumPost>.from(dummyForumPosts);
     if (_currentSubTab == 0) {
-      list.sort((a, b) => b.replyCount.compareTo(a.replyCount)); // 熱門：依留言數排序
+      list.sort((a, b) => b.likeCount.compareTo(a.likeCount));
     } else {
-      list.sort((a, b) => b.createdAt.compareTo(a.createdAt)); // 最新：依時間排序
+      list.sort((a, b) => b.createdAt.compareTo(a.createdAt));
     }
     return list;
-  }
-
-  // 發文按鈕
-  void _onFabPressed() {
-    // TODO: 實作發文功能
-    showDialog(
-      context: context,
-      builder:
-          (context) => AlertDialog(
-            title: const Text('提示'),
-            content: const Text('發文功能尚未實作'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('確定'),
-              ),
-            ],
-          ),
-    );
   }
 
   @override
@@ -58,12 +37,6 @@ class _ForumPageState extends State<ForumPage> {
         title: Text('知識中心', style: AppTextStyles.h2),
         backgroundColor: AppColors.background,
         scrolledUnderElevation: 0,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _onFabPressed,
-        backgroundColor: AppColors.secondary,
-        shape: const CircleBorder(),
-        child: const Icon(Icons.add, color: AppColors.white),
       ),
       body: SafeArea(
         child: Column(
@@ -101,7 +74,7 @@ class _ForumPageState extends State<ForumPage> {
                           builder: (context) => ForumPostDetailPage(post: post),
                         ),
                       );
-                      setState(() {}); // 更新點讚數/留言數
+                      setState(() {});
                     },
                   );
                 },

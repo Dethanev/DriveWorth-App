@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../config/app_colors.dart';
+import '../../../config/app_text_styles.dart';
 
 class TabItem extends StatelessWidget {
   final String label;
@@ -34,8 +35,7 @@ class TabItem extends StatelessWidget {
           child: Center(
             child: Text(
               label,
-              style: TextStyle(
-                fontSize: 16,
+              style: AppTextStyles.h5.copyWith(
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                 color:
                     isSelected ? AppColors.textPrimary : AppColors.textSecondary,
