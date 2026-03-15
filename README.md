@@ -1,18 +1,18 @@
-# DriveWorth 前端
+# 駕值觀 · DriveWorth
 
-## 開發執行
+**「買車容易養車難？」—— 用數據幫你算清楚。**
 
-```bash
-cd frontend/app
-flutter pub get
-flutter run
-```
+專為車主設計的**購車與養車成本評估工具**，結合維修邏輯與財務數據，從買車到養車的每一分成本都幫你算好。
 
-## Release 測試
+---
 
-```bash
-cd frontend/app
-flutter pub get
-flutter run --release --dart-define=SUPABASE_URL=你的_SUPABASE_URL --dart-define=SUPABASE_ANON_KEY=你的_SUPABASE_ANON_KEY
-```
-把 `你的_SUPABASE_URL`、`你的_SUPABASE_ANON_KEY` 換成實際值，整段複製即可跑 release。
+## 開發狀態
+
+**v0.1.0 已發佈**，歡迎下載試玩、給我們回饋。  
+其餘功能持續開發中。
+
+## 核心功能
+
+- **成本試算** — 稅金、油耗、保養、折舊，精準計算
+- **專業評估** — 維修數據支撐，養車預算更貼近現實
+- **理性決策** — 多車對比，找出最符合你財務的「駕值觀」
