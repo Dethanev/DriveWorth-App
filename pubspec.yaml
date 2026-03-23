@@ -80,6 +80,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/images/
     - assets/images/emojis/
     - assets/sounds/fart/
